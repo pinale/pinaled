@@ -1,5 +1,28 @@
 # Guida Completa — Display LED con Telefono + ESP32 + Matrice RGB
 
+# Indice
+
+1. Obiettivo del progetto
+2. Architettura generale
+3. Tipi di LED
+4. Quale scegliere
+5. Perché non usare direttamente USB del telefono
+6. Hardware consigliato
+7. Configurazione matrici grandi
+8. Librerie ESP32
+9. Ruolo reale dell’ESP32
+10. Comunicazione telefono → ESP32
+11. WLED
+12. Software telefono Android
+13. Testo scorrevole
+14. GIF e immagini
+15. Alimentazione
+16. Limitazione luminosità
+17. Setup finale consigliato
+18. Conclusioni
+
+# Guida Completa — Display LED con Telefono + ESP32 + Matrice RGB
+
 ## Obiettivo del progetto
 
 Realizzare un display LED RGB controllato da un telefono Android:
@@ -46,79 +69,36 @@ L’ESP32:
 
 # Tipi di LED
 
-## WS2812B
+| Caratteristica              | WS2812B          | SK9822                  |
+| --------------------------- | ---------------- | ----------------------- |
+| Protocollo                  | 1 filo dati      | DATA + CLOCK            |
+| Tipo comunicazione          | Timing-sensitive | Tipo SPI                |
+| Stabilità                   | Media            | Alta                    |
+| Velocità refresh            | Più lenta        | Molto veloce            |
+| FPS                         | Medi             | Alti                    |
+| Costo                       | Più economico    | Leggermente più costoso |
+| Cablaggio                   | Più semplice     | Un filo in più          |
+| Compatibilità tutorial      | Molto ampia      | Buona                   |
+| Adatto a matrici grandi     | Poco ideale      | Ottimo                  |
+| Adatto a GIF/video          | Limitato         | Molto adatto            |
+| Uso con ESP32               | Buono            | Ottimo                  |
+| Streaming realtime          | Limitato         | Ideale                  |
+| Stabilità su grandi matrici | Minore           | Maggiore                |
 
-### Caratteristiche
+## Quale scegliere
 
-* 1 filo dati
-* protocollo timing-sensitive
-* economico
-* molto diffuso
+| Scenario                        | LED consigliato |
+| ------------------------------- | --------------- |
+| Progetti semplici               | WS2812B         |
+| Display grandi                  | SK9822          |
+| Testo scorrevole                | SK9822          |
+| GIF e immagini                  | SK9822          |
+| Video LED                       | SK9822          |
+| Streaming realtime dal telefono | SK9822          |
+| Budget ridotto                  | WS2812B         |
+| Massima semplicità              | WS2812B         |
+| Alte prestazioni                | SK9822          |
 
-### Vantaggi
-
-* basso costo
-* moltissimi tutorial
-* semplice cablaggio
-
-### Svantaggi
-
-* refresh più lento
-* timing critico
-* meno stabile su grandi matrici
-* meno adatto a streaming video
-
----
-
-## SK9822
-
-### Caratteristiche
-
-* DATA + CLOCK
-* protocollo tipo SPI
-* molto stabile
-
-### Vantaggi
-
-* refresh veloce
-* FPS più alti
-* migliore per video/GIF
-* ottimo con ESP32
-* ideale per matrici grandi
-
-### Svantaggi
-
-* leggermente più costoso
-* un filo in più
-
----
-
-# Quale scegliere
-
-## Progetti semplici
-
-Usare:
-
-* WS2812B
-
----
-
-## Display grandi / animazioni / streaming
-
-Usare:
-
-* SK9822
-
-Consigliato per:
-
-* matrici grandi
-* testo scorrevole
-* GIF
-* immagini
-* video
-* frame realtime dal telefono
-
----
 
 # Perché non usare direttamente USB del telefono
 
