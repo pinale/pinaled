@@ -1,7 +1,6 @@
-# Guida Completa — Display LED con Telefono + ESP32 + Matrice RGB
+# PINALED - Matrix led Display LED + ESP32 + Smartphone
 
-# Indice
-
+## Indice
 1. Obiettivo del progetto
 2. Architettura generale
 3. Tipi di LED
@@ -21,12 +20,10 @@
 17. Setup finale consigliato
 18. Conclusioni
 
-# Guida Completa — Display LED con Telefono + ESP32 + Matrice RGB
 
-## Obiettivo del progetto
 
+## overview
 Realizzare un display LED RGB controllato da un telefono Android:
-
 * scritte scorrevoli
 * immagini
 * GIF
