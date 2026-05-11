@@ -42,13 +42,31 @@ con architettura:
 
 # Architettura generale
 
-```text
-Telefono Android (Termux/Python/App)
-            ↓ Wi‑Fi / USB
-ESP32 bridge/framebuffer
-            ↓
-Matrice LED RGB
+```mermaid
+graph LR
+    %% Definizione dei Sottografi per i Livelli
+    subgraph Control_Layer [Livello di Controllo]
+        A["<b>Telefono Android</b><br/>(Termux / Python / App)"]
+    end
+
+    subgraph Processing_Layer [Livello di Elaborazione]
+        B{"<b>ESP32</b><br/>(Bridge / Framebuffer)"}
+    end
+
+    subgraph Output_Layer [Livello di Output]
+        C["<b>Matrice LED RGB</b><br/>(WS2812B / HUB75)"]
+    end
+
+    %% Connessioni e Protocolli
+    A -- "Wi-Fi (UDP/TCP) o USB Serial" --> B
+    B -- "Bit-banging / RMT / I2S" --> C
+
+    %% Styling dei nodi
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style B fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style C fill:#f1f8e9,stroke:#33691e,stroke-width:2px
 ```
+
 
 L’ESP32 non deve generare effetti complessi.
 Il telefono genera:
