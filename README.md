@@ -222,28 +222,35 @@ Vantaggi:
 
 ---
 
-# Librerie ESP32
+# WLED (Il Firmware consigliato)
 
-## FastLED
+## Cos’è
+WLED è un **firmware completo** già pronto per ESP32. È la scelta ideale per il progetto PINALED perché trasforma l’ESP32 in un bridge intelligente senza scrivere una riga di codice.
 
-Utilizzata per:
+## Perché usarlo per PINALED
+*   **Zero Programmazione:** Si installa tramite browser e si configura via web.
+*   **Realtime Streaming:** Supporta nativamente protocolli come **DDP**, **E1.31 (E1.31)** e **UDP**.
+*   **Gestione Matrici:** Permette di configurare dimensioni, layout (serpentina o meno) e segmenti direttamente dall'interfaccia.
+*   **App Smartphone:** Esiste un'app ufficiale per gestire i parametri di base e la luminosità.
 
-* pilotaggio LED
-* DMA
-* timing
-* output parallelo
-* power limiting
+## Quando usarlo
+È la scelta consigliata per questo progetto. Permette di concentrarsi interamente sulla logica di rendering sul telefono (Python/Termux) delegando a WLED il compito di pilotare fisicamente i pixel.
 
 ---
 
-## NeoPixelBus
+# [Bonus] Librerie ESP32 (Per Sviluppo Custom)
 
-Alternativa moderna con:
+Se non si desidera usare WLED e si preferisce scrivere un firmware custom (Arduino/PlatformIO), queste sono le librerie di riferimento.
 
-* supporto ESP32
-* DMA
-* SPI
-* output efficienti
+### FastLED (La Libreria "Artistica")
+*   **Cos'è:** Una libreria C++ storica per il controllo creativo dei LED.
+*   **Punti di forza:** Gestione del colore superiore (palette, gradienti, correzione colore).
+*   **Uso:** Ideale per chi vuole generare animazioni direttamente "a bordo" dell'ESP32.
+
+### NeoPixelBus (La Libreria "Tecnica")
+*   **Cos'è:** Una libreria focalizzata su performance e stabilità hardware.
+*   **Punti di forza:** Sfrutta il DMA e l'hardware dell'ESP32 per inviare dati senza pesare sulla CPU. È molto più stabile di FastLED per lo streaming di grandi quantità di dati.
+*   **Curiosità:** WLED usa NeoPixelBus "sotto il cofano" per la sua efficienza.
 
 ---
 
@@ -445,13 +452,10 @@ LED
 
 # Alimentazione
 
-## IMPORTANTISSIMO
+> [!CAUTION]  
+> Una matrice RGB grande richiede moltissima corrente.
 
-Una matrice RGB grande richiede moltissima corrente.
-
----
-
-# Consumo teorico
+## Consumo teorico
 
 RGB bianco pieno:
 
@@ -465,9 +469,7 @@ Esempio:
 2560 LED ≈ 150A teorici
 ```
 
----
-
-# Ma nella realtà
+## Ma nella realtà
 
 Con:
 
@@ -477,11 +479,12 @@ Con:
 
 il consumo reale è MOLTO inferiore.
 
----
 
-# Limitare la luminosità
+> [!TIP]
+> Limitare la luminosità.
+ 
 
-## Metodo semplice
+## Metodo semplice [FastLED]
 
 ```cpp
 FastLED.setBrightness(64);
@@ -495,7 +498,7 @@ Range:
 
 ---
 
-# Power limiting automatico
+## Power limiting automatico [FastLED]
 
 Metodo consigliato:
 
@@ -511,7 +514,7 @@ Questo:
 
 ---
 
-# Alimentatore consigliato
+## Alimentatore consigliato
 
 Per matrici grandi:
 
@@ -527,13 +530,9 @@ in base a:
 
 ---
 
-# Iniezione alimentazione
+## Iniezione alimentazione
 
-NON alimentare tutta la matrice da un solo punto.
-
-## Regola pratica
-
-Alimentare:
+* NON alimentare tutta la matrice da un solo punto.
 
 * ogni strip
   oppure
