@@ -481,8 +481,20 @@ il consumo reale è MOLTO inferiore.
 
 
 > [!TIP]
-> Limitare la luminosità.
- 
+# Limitazione luminosità
+
+## Metodo semplice [WLED]
+Tramite interfaccia web (slider) o API HTTP (comodo da script):
+```text
+http://[IP_ESP]/win&A=64
+```
+
+## Power limiting automatico [WLED]
+Impostazione nel menu **Config -> LED Preferences**:
+* **Maximum Current:** inserire il limite (es. `20000` mA).
+WLED calcolerà l'assorbimento e ridurrà la luminosità se necessario per non bruciare l'alimentatore.
+
+---
 
 ## Metodo semplice [FastLED]
 
@@ -505,6 +517,7 @@ Metodo consigliato:
 ```cpp
 FastLED.setMaxPowerInVoltsAndMilliamps(5, 30000);
 ```
+
 
 Questo:
 
