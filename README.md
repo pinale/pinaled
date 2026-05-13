@@ -139,22 +139,15 @@ Per questo serve un microcontrollore intermedio.
 ---
 
 # Hardware consigliato
+
 ### ESP32-S3
 
-Consigliato per:
-
-* matrici grandi
-* output paralleli
-* streaming video
-* refresh elevato
-
-Vantaggi:
-
-* più RAM
-* USB nativa
-* DMA migliore
-* performance superiori
-
+| Consigliato per         | Vantaggi            |
+|-------------------------|---------------------|
+| matrici grandi          | più RAM             |
+| output paralleli        | USB nativa          |
+| streaming video         | DMA migliore        |
+| refresh elevato         | performance superiori |
 
 in alternativa `ESP32 DevKit` buono per piccoli display, protoripi, matrici medie
 
