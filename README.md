@@ -139,19 +139,6 @@ Per questo serve un microcontrollore intermedio.
 ---
 
 # Hardware consigliato
-
-## Controller
-
-### ESP32 DevKit
-
-Buono per:
-
-* piccoli display
-* prototipi
-* matrici medie
-
----
-
 ### ESP32-S3
 
 Consigliato per:
@@ -168,6 +155,28 @@ Vantaggi:
 * DMA migliore
 * performance superiori
 
+
+in alternativa `ESP32 DevKit` buono per piccoli display, protoripi, matrici medie
+
+
+---
+### Key ESP32 Model Comparison (2026 Landscape)
+
+- **ESP32 (Original)**: Dual-core Xtensa LX6, 240MHz, Bluetooth classic + BLE, 520KB SRAM. Ideal for general-purpose, high-performance tasks.
+- **ESP32-S3**: Dual-core LX7, 240MHz, BLE 5.0, AI acceleration instructions, high GPIO count. Best for complex AI/ML, camera, and display projects
+- **ESP32-C6**: Single-core RISC-V, Wi-Fi 6 (802.11ax), BLE 5.3, Zigbee, Thread. Perfect for low-power smart home (Matter) devices.
+- **ESP32-C3**: Single-core RISC-V, 160MHz, BLE 5.0. Low-cost, energy-efficient, great alternative to ESP8266, but lacks advanced Wi-Fi features of C6.
+- **ESP32-S2**: Single-core LX7, 240MHz, Wi-Fi only (no Bluetooth), native USB support. Good for secure, IoT edge connectivity.
+- **ESP32-H2**: RISC-V, Bluetooth 5.3, Zigbee/Thread. Primarily for low-power IoT, does not support Wi-Fi.
+
+### Selecting the Right Model
+- **Highest Performance/AI**: ESP32-S3
+- **Latest Smart Home/Matter**: ESP32-C6
+- **Budget/Simple IoT**: ESP32-C3
+- **Classic/Standard IoT**: Original ESP32-WROOM-32
+- **No Bluetooth Required**: ESP32-S2
+
+[VIDEO Which ESP32 is Best for Your Project?](youtube.com/watch?v=rEDtVMuueqI&t=285)
 ---
 
 # Matrice esempio
