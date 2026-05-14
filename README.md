@@ -152,8 +152,7 @@ Per questo serve un microcontrollore intermedio.
 in alternativa `ESP32 DevKit` buono per piccoli display, protoripi, matrici medie
 
 
----
-### Key ESP32 Model Comparison (2026 Landscape)
+### ESP32 Model Comparison (2026 Landscape)
 
 - **ESP32 (Original)**: Dual-core Xtensa LX6, 240MHz, Bluetooth classic + BLE, 520KB SRAM. Ideal for general-purpose, high-performance tasks.
 - **ESP32-S3**: Dual-core LX7, 240MHz, BLE 5.0, AI acceleration instructions, high GPIO count. Best for complex AI/ML, camera, and display projects
@@ -170,6 +169,7 @@ in alternativa `ESP32 DevKit` buono per piccoli display, protoripi, matrici medi
 - **No Bluetooth Required**: ESP32-S2
 
 [VIDEO Which ESP32 is Best for Your Project?](youtube.com/watch?v=rEDtVMuueqI&t=285)
+[Understanding models name](ESP32 - Understanding models name.md)
 ---
 
 # Matrice esempio
@@ -237,6 +237,12 @@ WLED è un **firmware completo** già pronto per ESP32. È la scelta ideale per 
 
 ## Quando usarlo
 È la scelta consigliata per questo progetto. Permette di concentrarsi interamente sulla logica di rendering sul telefono (Python/Termux) delegando a WLED il compito di pilotare fisicamente i pixel.
+
+[Tutorial WLED su ESP32 installazione e configurazione per strisce LED](https://www.youtube.com/watch?v=lK44_TC6apw)
+
+[TUTORIAL WLED MATRICI LED RGB WS2812B 2 parte - impostazioni -](https://www.youtube.com/watch?v=Pnmju1ga1XY)
+
+(https://www.youtube.com/watch?v=QkcStOaze40)[collegamenti]
 
 ---
 
