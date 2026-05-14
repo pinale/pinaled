@@ -169,7 +169,7 @@ in alternativa `ESP32 DevKit` buono per piccoli display, protoripi, matrici medi
 - **No Bluetooth Required**: ESP32-S2
 
 [VIDEO Which ESP32 is Best for Your Project?](youtube.com/watch?v=rEDtVMuueqI&t=285)
-[Understanding models name](ESP32 - Understanding models name.md)
+[Understanding models name](ESP32-Understanding-models-name.md)
 ---
 
 # Matrice esempio
